@@ -1,0 +1,8 @@
+ <%= render "/shared/menu" %>
+ <div class="container">
+<b>New Artis</b>
+<%= form_for(@artis, url: admin_artiss_path ) do |f| %>
+<%= render partial: 'form', locals:{f:f} %>
+<%#= link_to 'Back', genre_index_path %>
+<% end %>
+</div>

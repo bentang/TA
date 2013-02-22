@@ -1,0 +1,35 @@
+ <%= render "/shared/menu" %>
+
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table>
+  <tr>
+    <td><%= f.label :nama_album %></td>
+    <td><%= f.text_field :nama_album %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :tahun %></td>
+    <td><%= f.text_field :tahun %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :harga %></td>
+    <td><%= f.text_field :harga %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :stok %></td>
+    <td><%= f.text_field :stok %></td>
+  </tr>
+  </table>
+  <div>
+    <%= f.submit %>
+  </div>
+

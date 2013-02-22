@@ -1,0 +1,27 @@
+<%= render "/shared/menu" %>
+<div class="container">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nama Album</td>
+		<td>Tahun Terbit</td>
+		<td>Harga</td>
+		<td>Stok</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><%= @album.id %></td>
+		<td><%= @album.nama_album %></td>
+		<td><%= @album.tahun %></td>
+		<td><%= @album.harga %></td>
+		<td><%= @album.stok %></td>
+		<td><%= link_to 'Edit', edit_admin_album_path %> | 
+		<%= link_to 'Delete', admin_album_path, :method => 'delete', :confirm => "Anda yakin COY ?" %>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p><%= link_to 'Back To Album', admin_albums_path %></p>
+</div>

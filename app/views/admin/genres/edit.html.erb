@@ -1,0 +1,11 @@
+<%= render "/shared/menu" %>
+<div class="container">
+<b>Editing Genre</b>
+<%= form_for(@genre, url: admin_genre_path ) do |f| %>
+
+<%= render partial: 'form', locals:{f:f} %>
+
+<%#= link_to 'Show', admin_genre_path %> 
+<%#= link_to 'Back', admin_genres_path %>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+ <%= render "/shared/menu" %>
+ <div class="container">
+<b>New Albums</b>
+<%= form_for(@album, url: admin_albums_path ) do |f| %>
+<%= render partial: 'form', locals:{f:f} %>
+<%#= link_to 'Back', genre_index_path %>
+<% end %>
+</div>

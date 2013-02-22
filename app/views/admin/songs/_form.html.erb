@@ -1,0 +1,32 @@
+<%= render "/shared/menu" %>
+<% if @song.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@song.errors.count, "error" )%> prohibited this post form being saved:</h2>
+		<ul>
+			<% @artis.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+
+	<table>
+		<tr>
+			<td><%= f.label :number_song %></td>
+			<td>:</td>
+			<td><%= f.text_field :number_song %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :artis_id %></td>
+			<td>:</td>
+			<td><%= f.text_field :artis_id %></td>
+
+		</tr>
+		<tr>
+			<td><%= f.label :artis_id %></td>
+			<td>:</td>
+			<td><%= f.text_field :artis_id %></td>
+		</tr>
+
+		
+		
+	</table>

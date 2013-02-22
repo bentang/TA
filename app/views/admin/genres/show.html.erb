@@ -1,0 +1,21 @@
+<%= render "/shared/menu" %>
+<div class="container">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Name</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><%= @genre.id %></td>
+		<td><%= @genre.name %></td>
+		<td><%= link_to 'Edit', edit_admin_genre_path %>
+		<%= link_to 'Delete', admin_genre_path, :method => 'delete', :confirm => "Anda yakin COY ?" %>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p><%= link_to 'Back To Genre', admin_genres_path %></p>
+</div>

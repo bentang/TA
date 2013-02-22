@@ -1,0 +1,33 @@
+ <%= render "/shared/menu" %>
+<div class="container">
+	<h1>artis</h1>
+	<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nama Artis</td>
+		<td>Time Created</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<% @artis.each do |artis| %>
+		<td><%= artis.id %></td>
+		  <td>
+		    <%= link_to artis.nama, admin_artis_path(artis.id) %>
+		</td>
+		<td>
+		    <p>
+		      <%= time_ago_in_words artis.created_at %> ago
+		    </p>
+		</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<p>
+	  <%= link_to "New artis", new_admin_artis_path %>
+	</p>
+  
+
+</div>

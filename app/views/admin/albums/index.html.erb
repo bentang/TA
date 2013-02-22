@@ -1,0 +1,47 @@
+ <%= render "/shared/menu" %>
+<div class="container">
+	<h1>Album</h1>
+	<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nama Album</td>
+		<td>Tahun Terbit</td>
+		<td>Harga</td>
+		<td>Stok</td>
+		<td>Time Created</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<% @album.each do |album| %>
+		<td><%= album.id %></td>
+		  <td>
+		    <%= link_to album.nama_album, admin_album_path(album.id) %>
+		</td>
+		 <td>
+		    <%= album.tahun %>
+		</td>
+
+		 <td>
+		    <%= album.harga %>
+		</td>
+
+		 <td>
+		    <%= album.stok %>
+		</td>
+		<td>
+		    <p>
+		      <%= time_ago_in_words album.created_at %> ago
+		    </p>
+		</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<p>
+	  <%= link_to "New album", new_admin_album_path %>
+	</p>
+  
+
+</div>

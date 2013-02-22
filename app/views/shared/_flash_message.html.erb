@@ -1,0 +1,9 @@
+<% [:notice, :error, :alert, :success, :confirm].each do |level| %>
+  <% unless flash[level].blank? %>
+    <%#= ((!actions.include? action_name) && (request.fullpath.split("/")[1] != "management-admin")) ? raw("<br />") : "" %>
+    <div class="alert alert-<%= level %>">
+      <%= content_tag :div, flash[level] %>
+    </div>
+  <% end %>
+<% end %>
+<div class="clear"></div>

@@ -1,0 +1,33 @@
+ <%= render "/shared/menu" %>
+<div class="container">
+	<h1>Genre</h1>
+	<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Name</td>
+		<td>Time Created</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<% @genre.each do |genre| %>
+		<td><%= genre.id %></td>
+		  <td>
+		    <%= link_to genre.name, admin_genre_path(genre.id) %>
+		</td>
+		<td>
+		    <p>
+		      <%= time_ago_in_words genre.created_at %> ago
+		    </p>
+		</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<p>
+	  <%= link_to "New Genre", new_admin_genre_path %>
+	</p>
+  
+
+</div>

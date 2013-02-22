@@ -1,0 +1,21 @@
+<%= render "/shared/menu" %>
+<div class="container">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nama Artis</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><%= @artis.id %></td>
+		<td><%= @artis.nama %></td>
+		<td><%= link_to 'Edit', edit_admin_artis_path %> | 
+		<%= link_to 'Delete', admin_artis_path, :method => 'delete', :confirm => "Anda yakin COY ?" %>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p><%= link_to 'Back To artis', admin_artiss_path %></p>
+</div>

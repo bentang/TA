@@ -1,0 +1,21 @@
+ <%= render "/shared/menu" %>
+  <% if @artis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artis.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @artis.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table>
+    <td><%= f.label :nama %></td>
+      <td>:</td>
+    <td><%= f.text_field :nama %></td>
+  </table>
+  <div>
+    <%= f.submit %>
+  </div>
+
